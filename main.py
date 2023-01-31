@@ -21,4 +21,16 @@ while race_on:
         dist = random.randint(1, 10)
         _.forward((dist))
 
+        # If Y coordinate >= +380, end race and declare as winner.
+        if _.xcor() >= 380:
+            winner = _.pencolor()
+            print(f"The winner is {winner}")
+            race_on = False
+            break
+
+if choice == winner:
+    print("You win!")
+else:
+    print("You lose")
+
 screen.exitonclick()
